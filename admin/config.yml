@@ -1,7 +1,7 @@
 # Replace REPLACE_WITH_TURBO_SITE_ID with the Site ID from Decap Turbo > Overview.
 backend:
   name: turbo-github
-  turbo_site_id: REPLACE_WITH_TURBO_SITE_ID
+  turbo_site_id: 310e7fb3-9821-4141-9d95-b36042b0fdb6
   branch: main
 
 site_url: https://shimilshaji.github.io/shimil-portfolio

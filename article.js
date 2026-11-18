@@ -32,7 +32,18 @@
         host.append(presentation);
       }
     });
+    if (post.issuuUrl) {
+      const issuu = document.createElement('p');
+      const issuuLink = document.createElement('a');
+      issuuLink.href = post.issuuUrl;
+      issuuLink.target = '_blank';
+      issuuLink.rel = 'noopener noreferrer';
+      issuuLink.textContent = post.issuuLinkText || 'View on Issuu';
+      issuu.append(issuuLink);
+      host.append(issuu);
+    }
     const back = document.createElement('p'); const link = document.createElement('a'); link.href = 'blog.html'; link.textContent = '← Back to all articles'; back.append(link); host.append(back);
   }).catch(() => { host.innerHTML = '<h1>Article could not be loaded</h1><p><a href="blog.html">Back to Blog</a></p>'; });
 })();
+
 

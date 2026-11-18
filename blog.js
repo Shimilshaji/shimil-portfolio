@@ -18,7 +18,7 @@
       card.hidden = !visible;
       if (visible) count++;
     });
-    result.textContent = `${count} ${count === 1 ? 'article' : 'articles'}`;
+    result.textContent = String(count) + (count === 1 ? ' article' : ' articles');
     empty.hidden = count !== 0;
   }
 
@@ -34,7 +34,7 @@
   search.addEventListener('input', update);
   grid.addEventListener('click', event => {
     const link = event.target.closest('.blog-link');
-    if (!link) return;
+    if (!link || !link.getAttribute('href').startsWith('#article-')) return;
     event.preventDefault();
     const panel = document.querySelector(link.getAttribute('href'));
     const opening = link.getAttribute('aria-expanded') !== 'true';
